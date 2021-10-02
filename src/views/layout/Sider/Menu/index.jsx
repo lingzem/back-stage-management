@@ -78,11 +78,11 @@ class Meun extends Component {
 
 
   handleMenuSelect = ({ key = "/dashboard" }) => {
-    // let menuItem = getMenuItemInMenuListByProperty(menuList, "path", key);
-    // this.props.addTag(menuItem);
+    let menuItem = getMenuItemInMenuListByProperty(menuList, "path", key);
+    this.props.addTag(menuItem);
   };
 
-  componentWillMount() {
+  componentDidMount(){
     const menuTreeNode = this.getMenuNodes(menuList);
     this.setState({
       menuTreeNode,
@@ -91,12 +91,12 @@ class Meun extends Component {
   }
   render() {
     const path = this.props.location.pathname;
-    const openKey = this.state.openKey;
+    const {openKey, menuTreeNode} = this.state;
     return (
       <div className="sidebar-menu-container">
         <Scrollbars autoHide autoHideTimeout={1000} autoHideDuration={200}>
         <div >
-            {this.state.menuTreeNode.map((item, index) => (
+            {(menuTreeNode || []).map((item, index) => (
                 <div key={`${index}`}>
                     <Menu
                         mode="inline"

@@ -1,10 +1,11 @@
 import React from "react";
 import { Row, Col } from "antd";
+import TypingCard from '@/components/TypingCard'
 import "./index.less";
 
 // 首页
 const Dashboard = () => {
-  
+  const cardContent = "首页"
   return (
     <div className="app-container">
       <Row gutter={8}>
@@ -16,7 +17,7 @@ const Dashboard = () => {
           xl={12}
           style={{ marginBottom: "30px" }}
         >
-         首页
+         <TypingCard title='' source={cardContent}/>
         </Col>
       </Row>
     </div>

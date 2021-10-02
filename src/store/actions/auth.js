@@ -4,7 +4,6 @@ import { setUserToken, resetUser } from "./user";
 import { setToken, removeToken } from "@/utils/auth";
 // 登录
 export const login = (username, password) => (dispatch)=>  {
-    console.log(`dd`)
     return new Promise((resolve, reject) => {
         ajaxQeqLogin({ username: username.trim(), password: password })
           .then((response) => {

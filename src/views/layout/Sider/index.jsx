@@ -2,6 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 import Logo from "./Logo";
 import Menu from "./Menu";
+import { connect } from "react-redux";
 const { Sider } = Layout;
 
 const LayoutSider = (props) => {
@@ -19,11 +20,9 @@ const LayoutSider = (props) => {
   );
 };
 
-export default LayoutSider
-// const mapStateToProps = (state) => {
-//   return {
-//     ...state.app,
-//     ...state.settings,
-//   };
-// };
-// export default connect(mapStateToProps)(LayoutSider);
+const mapStateToProps = (state) => {
+  return {
+    ...state.app,
+  };
+};
+export default connect(mapStateToProps)(LayoutSider);

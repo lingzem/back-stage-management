@@ -1,9 +1,9 @@
 import axios from "axios";
 import { Modal } from "antd";
-// import store from "@/store";
+import store from "@/store";
 
-// import { getToken } from "@/utils/auth";
-// import { logout } from "@/store/actions";
+import { getToken } from "@/utils/auth";
+import { logout } from "@/store/actions";
 
 //创建一个axios示例
 const service = axios.create({
@@ -15,15 +15,14 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     // Do something before request is sent
-    // if (store.getState().user.token) {
-    //   // 让每个请求携带token-- ['Authorization']为自定义key 请根据实际情况自行修改
-    //   config.headers.Authorization = getToken();
-    // }
+    if (store.getState().user.token) {
+      // 让每个请求携带token-- ['Authorization']为自定义key 请根据实际情况自行修改
+      config.headers.Authorization = getToken();
+    }
     return config;
   },
   (error) => {
     // Do something with request error
-    console.log(error); // for debug
     Promise.reject(error);
   }
 );
@@ -42,8 +41,8 @@ service.interceptors.response.use(
         okText: "重新登录",
         cancelText: "取消",
         onOk() {
-          // let token = store.getState().user.token;
-          // store.dispatch(logout(token));
+          let token = store.getState().user.token;
+          store.dispatch(logout(token));
         },
         onCancel() {
           // console.log("Cancel");

@@ -2,10 +2,7 @@
 
 
 # 简介
-
-
-
-
+快速搭建一个后台管理系统
 # 功能
 
 ```bash
@@ -22,29 +19,14 @@
   - Screenfull全屏
   - 自适应收缩侧边栏
 
-- 编辑器
-  - 富文本
-  - Markdown
-
-- Excel
-  - 导出excel
-  - 导入excel
-  - 前端可视化excel
-
-- Zip
-  - 导出zip
 
 - 错误页面
   - 404
 
-- 组件
-  - 拖拽列表
-
 - 表格
 - Dashboard
-- 引导页
-- ECharts 图表
-- 剪贴板
+
+
 ```
 
 # 目录结构
@@ -81,10 +63,10 @@
 
 ```shell
 # 克隆项目
-git clone 
+git clone git@github.com:lingzem/back-stage-management.git
 
 # 进入项目目录
-cd 
+cd back-stage-management
 
 # 安装依赖
 npm install
@@ -96,6 +78,5 @@ npm install --registry=https://registry.npm.taobao.org
 npm start
 ```
 # 访问
-
-<!-- ![](./guide.gif) -->
+localhost:3000
 

@@ -1,14 +1,7 @@
 import { combineReducers } from "redux";
-import user from "./user";
-import app from "./app";
-import settings from "./settings";
-import tagsView from "./tagsView";
-import monitor from "./monitor";
+import user from "./user.js";
 
 export default combineReducers({
   user,
-  app,
-  settings,
-  tagsView,
-  monitor
+ 
 });
